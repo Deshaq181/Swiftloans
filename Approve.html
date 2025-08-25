@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Application Submitted - Swift Loans</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background-color: #f5f8fc;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+    .container {
+        max-width: 600px;
+        background: white;
+        margin: 40px auto;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        text-align: center;
+        animation: slideDown 0.8s ease-out;
+    }
+    @keyframes slideDown {
+        from { transform: translateY(-50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    h1 {
+        color: #004aad;
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    .highlight {
+        background: #f0f8ff;
+        border: 1px solid #b5d3ff;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 15px;
+    }
+    .referral-box {
+        background: #f0f4ff;
+        padding: 15px;
+        border-radius: 8px;
+        word-wrap: break-word;
+        border: 1px solid #ccd6f6;
+        margin-top: 15px;
+    }
+    button {
+        background-color: #004aad;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 15px;
+        font-size: 15px;
+    }
+    button:hover {
+        background-color: #003080;
+    }
+    .whatsapp-btn {
+        background-color: #25D366;
+        margin-top: 20px;
+    }
+    .whatsapp-btn:hover {
+        background-color: #1eb85c;
+    }
+    footer {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🎉 Application Received!</h1>
+    <p>Thank you for applying for a loan with <strong>Swift Loans</strong>.</p>
+    <p class="highlight">📌 For faster approval, contact our admin directly on WhatsApp: <strong>0728 838 138</strong>  
+    – Let us help you secure your loan in record time 🚀</p>
+
+    <a href="https://wa.me/254728838138?text=Hello%20Admin%2C%20I%20just%20applied%20for%20a%20loan%20and%20would%20like%20fast%20approval." target="_blank">
+        <button class="whatsapp-btn">💬 Contact Admin on WhatsApp</button>
+    </a>
+
+    <h2>💰 Earn 30% Commission</h2>
+    <p>Share your unique referral link below. You’ll earn <strong>30% of what your referred client borrows</strong>.</p>
+    
+    <div class="referral-box" id="referralLink">
+        https://swiftloans.com/referral?user=YOUR_ID
+    </div>
+    <button onclick="copyReferral()">📋 Copy Link</button>
+</div>
+
+<footer>
+    &copy; 2025 Swift Loans | All Rights Reserved
+</footer>
+
+<script>
+function copyReferral() {
+    const link = document.getElementById('referralLink').innerText;
+    navigator.clipboard.writeText(link).then(() => {
+        alert('Referral link copied to clipboard!');
+    });
+}
+</script>
+
+</body>
+</html>

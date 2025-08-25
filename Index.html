@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Swift Loans - Homepage</title>
+<style>
+    body {
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f8fc;
+        color: #333;
+    }
+    header {
+        background-color: #004aad;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header img {
+        height: 45px;
+    }
+    nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+    nav a:hover {
+        color: #ffd43b;
+    }
+    /* Hero Section */
+    .hero {
+        position: relative;
+        text-align: center;
+        color: white;
+        padding: 100px 20px;
+        background: linear-gradient(rgba(0,74,173,0.7), rgba(0,74,173,0.7)), url('loan.jpg') center/cover no-repeat;
+        animation: sway 6s ease-in-out infinite alternate;
+    }
+    @keyframes sway {
+        from { background-position: center top; }
+        to { background-position: center bottom; }
+    }
+    .hero h1 {
+        font-size: 38px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .hero p {
+        font-size: 18px;
+        max-width: 600px;
+        margin: auto;
+    }
+    /* Apply Button Section */
+    .apply-section {
+        text-align: center;
+        padding: 30px 20px;
+    }
+    .apply-btn {
+        background-color: #ffd43b;
+        color: #004aad;
+        font-size: 18px;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .apply-btn:hover {
+        background-color: #ffc107;
+    }
+    /* Sections */
+    .section {
+        width: 90%;
+        max-width: 1100px;
+        margin: auto;
+        padding: 40px 20px;
+        background-color: #fff;
+        margin-top: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .section h2 {
+        color: #004aad;
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+    .section p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    /* Loans Section */
+    .loan-section {
+        background-color: #f9fbff;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        border: 1px solid #e1e9f5;
+    }
+    .loan-section img {
+        width: 80px;
+        height: 80px;
+        background-color: #e0e0e0;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .loan-section div {
+        flex: 1;
+    }
+    .loan-section h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+        color: #004aad;
+    }
+    .loan-section p {
+        margin-top: 5px;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    /* Footer */
+    footer {
+        background-color: #002b66;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
+    footer a {
+        color: #ffd43b;
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <img src="swift.jpeg" alt="Swift Logo">
+    <nav>
+        <a href="apply.html">Apply Now</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Fast, Easy & Reliable Loans</h1>
+    <p>Helping you achieve your financial goals with quick approvals, flexible terms, and trusted service.</p>
+</section>
+
+<div class="apply-section">
+    <a href="apply.html" class="apply-btn">Apply Now</a>
+</div>
+
+<div class="section" id="about">
+    <h2>About Us</h2>
+    <p>Swift Loans is committed to providing quick, flexible, and transparent loan services to meet your needs. We pride ourselves on fast approval times, flexible repayment plans, and excellent customer support.</p>
+</div>
+
+<div class="section" id="why">
+    <h2>Why Us</h2>
+    <p>We stand out by offering competitive interest rates, personalized loan options, and a customer-first approach. Whether you need funds for personal expenses, business expansion, or emergencies, Swift Loans has got you covered.</p>
+</div>
+
+<div class="section" id="loans">
+    <h2>Understanding the Different Types of Loans Available</h2>
+
+    <div class="loan-section">
+        <img src="easy.png" alt="Easy Cash Loan">
+       
+        <div>
+            <h3>PERSONAL LOANS</h3>
+            <p>Personal loans are typically unsecured loans that are offered to individuals for a variety of purposes, including debt consolidation, home improvements, and other personal expenses.</p>
+        </div>
+    </div>
+
+    <div class="loan-section">
+        <img src="fast.jpeg" alt="Easy Cash Loan">
+        <div>
+            <h3>EASY CASH LOANS</h3>
+            <p>Easy cash loans generally have higher interest rates and are often available to individuals with poor credit.</p>
+        </div>
+    </div>
+
+    <div class="loan-section">
+        <img src="vet.png" alt="Vet Loan">
+        <div>
+            <h3>VET LOANS</h3>
+            <p>Veterinary loans, also known as pet loans, are specifically designed to help pet owners pay for unexpected medical expenses for their pets. Vet loans can be used for various veterinary expenses, including surgeries, medications, and emergency care.</p>
+        </div>
+    </div>
+
+    <div class="loan-section">
+        <img src="business.jpeg" alt="Business Loan">
+        <div>
+            <h3>BUSINESS LOANS</h3>
+            <p>Business loans are designed for entrepreneurs and small business owners to help finance their operations or expansion plans. They can be secured or unsecured and may require collateral, such as real estate or equipment, to obtain.</p>
+        </div>
+    </div>
+
+    <div class="loan-section">
+        <img src="emergency.png" alt="Emergency Loan">
+        <div>
+            <h3>EMERGENCY CASH LOANS</h3>
+            <p>Emergency cash loans generally have higher interest rates and shorter repayment terms, but they can be a valuable resource in a time of crisis.</p>
+        </div  
+    </div>
+</div>
+
+<footer id="contact">
+    <p><a href="https://swiftloans.com.au">swiftloans.com.au</a> | Call us: +123-456-7890</p>
+</footer>
+
+</body>
+</html>

